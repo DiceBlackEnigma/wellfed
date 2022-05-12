@@ -1,0 +1,21 @@
+.LogFoodWrapper {
+    margin: 1rem auto 0;
+    width: calc(100% - 2rem);
+}
+
+.LogFoodWrapper .petBowl {
+    position:absolute;
+}
+
+.widgetHeader {
+    position:relative;
+}
+
+.widgetHeader::before {
+    content: url("./food-bowl.svg");
+    position: absolute;
+    top: -9px;
+    left: 0;
+    bottom: 0;
+    z-index: 99999;
+}

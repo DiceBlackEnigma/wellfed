@@ -46,3 +46,24 @@ html, body {
 .ml-1 {
     margin-left:1rem;
 }
+
+.alert-widget-danger {
+    color:#FFEFD5;
+    font-weight:bold;
+    position:relative;
+    border-radius:10px !important;
+    box-shadow:3px 3px 6px #FFAE2B;
+    background-color:#E35E25 !important;
+}
+
+.accordion-header {
+    position:relative;
+}
+
+.widget-with-image-text {
+    padding-left:4rem;
+}
+
+.mb-17 {
+    margin-bottom:17px;
+}

@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 
 import {ProgressBar} from '../ProgressBar/ProgressBar';
 import {Plans} from '../Plans/Plans';
+import {LogFood} from '../LogFood/LogFood';
 
 import classes from './Dashboard.module.css';
 import husky from './husky.svg';
@@ -45,6 +46,7 @@ export const Dashboard = props => {
         </div>
 
         <Plans />
+        <LogFood />
       </div>
     </div>
 
