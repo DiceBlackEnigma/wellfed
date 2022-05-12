@@ -1,0 +1,81 @@
+.Login nav {
+    position: relative;
+}
+
+.Login .Logo {
+    width: 9rem;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+}
+
+.Login nav::after {
+    content: '';
+    left: 0;
+    bottom: -1.5px;
+    width: 50%;
+    position: absolute;
+    transition: left .5s;
+    border-bottom: 5px solid #FFAE2B;
+}
+
+.Login nav.active::after {
+    left: 50%;
+    right: 0;
+}
+
+.Login nav a {
+    flex-basis: 50%;
+    font-size: 2rem;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid #034D91;
+}
+
+.Login nav a.active {
+    font-weight: bold;
+}
+
+.Login .socialMediaSignupWrapper button {
+    width: 100%;
+    min-height: 3rem;
+    position: relative;
+    border-radius: 5rem;
+    margin-bottom: 0.75rem;
+}
+
+.Login .socialMediaSignupWrapper button::before {
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-42%);
+}
+
+.Login .facebookBtn {
+    color: #FFF;
+    border-color: #3578EA;
+    background-color: #3578EA;
+}
+
+.Login .facebookBtn::before {
+    position: absolute;
+    content: url("./facebook-icon.svg");
+}
+
+.Login .googleBtn {
+    color: #FFF;
+    border-color: #DB4437;
+    background-color: #DB4437;
+}
+
+.Login .googleBtn::before {
+    position: absolute;
+    content: url('./google-icon.png');
+}
+
+.Login .socialMediaSignupWrapper {
+    width: 80vw;
+    max-width: 100%;
+    margin: 0 auto 3rem;
+}
+
+

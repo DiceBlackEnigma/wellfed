@@ -1,0 +1,12 @@
+.progress-ring__circle {
+    stroke-dasharray:364.425px 364.425px;
+    stroke-dashoffset: 364.425px;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    transition: stroke-dashoffset 0.5s;
+}
+
+
+.progress-ring__circle.active {
+    stroke-dashoffset:130px;
+}

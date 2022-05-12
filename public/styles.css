@@ -1,0 +1,48 @@
+* {
+    font-family: Nunito, sans-serif;
+}
+
+html, body {
+    width: 100vw;
+    font-size: 16px;
+    overflow-x: hidden;
+    background-color: #F1F9FF;
+}
+
+.primary-text {
+    color:#034D91;
+}
+
+.primary-btn {
+    color:#FFCE80;
+    font-weight:bold;
+    background-color:#034D91;
+}
+
+.default-btn {
+    color:#034D91;
+    font-weight:bold;
+    background-color:#FFFFFF;
+}
+
+.secondary-btn {
+    color:#034D91;
+    font-weight:bold;
+    background-color:#FFCE80;
+}
+
+.primary-btn:hover {
+
+}
+
+.default-btn:hover {
+
+}
+
+.secondary-btn:hover {
+
+}
+
+.ml-1 {
+    margin-left:1rem;
+}
