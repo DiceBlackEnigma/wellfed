@@ -31,6 +31,7 @@
     justify-content:space-between;
 }
 
+.PlanSection .PlanCard .ButtonWrapper a,
 .PlanSection .PlanCard .ButtonWrapper button {
     min-width:calc(50% - 0.5rem);
 }

@@ -1,0 +1,9 @@
+.ActivePlanWrapper {
+    padding-left:1rem;
+    padding-right:1rem;
+}
+
+.ActivePlanWrapper .foodIntakeWidget {
+    padding:1rem;
+    border-radius:15px;
+}

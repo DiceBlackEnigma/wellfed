@@ -1,16 +1,13 @@
-import {Login} from './components/Login/Login';
-
-import {Dashboard} from './components/Dashboard/Dashboard';
-
+import {BrowserRouter} from 'react-router-dom';
 import 'animate.css';
-import {EditPlan} from './components/Plans/EditPlan/EditPlan';
+import {AnimatedRoutes} from './components/AnimatedRoutes';
 
 function App() {
   return (
     <div>
-      {/*<Login />*/}
-      {/*<Dashboard/>*/}
-      <EditPlan />
+      <BrowserRouter>
+        <AnimatedRoutes/>
+      </BrowserRouter>
     </div>
   );
 }

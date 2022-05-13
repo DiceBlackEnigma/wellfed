@@ -4,6 +4,7 @@ import {ProgressBar} from '../ProgressBar/ProgressBar';
 import {Plans} from '../Plans/Plans';
 import {LogFood} from '../LogFood/LogFood';
 
+
 import classes from './Dashboard.module.css';
 import husky from './husky.svg';
 import scale from './scale.svg';
@@ -11,13 +12,18 @@ import bowl from './bowl.svg';
 import bcs from './body-conditon.svg';
 import runningDog from './exercise.svg';
 import alertIcon from './alert-icon.svg'
+import {MotionDiv} from '../../shared/MotionDiv/MotionDiv';
+import {useSearchParams} from 'react-router-dom';
+import {ActivePlan} from '../Plans/ActivePlan/ActivePlan';
 
 export const Dashboard = props => {
-  let [progressState, setProgressLoadState] = useState(false);
-  let [fadeOut, setFadeOut] = useState(false);
+  const [progressState, setProgressLoadState] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [fadeOut, setFadeOut] = useState(false);
+
+  const activePlan = !!searchParams.get('p');
 
   const alertClickHandler = event => setFadeOut(true);
-
   useEffect(() => {
     setTimeout(() => {
       setProgressLoadState(true);
@@ -25,7 +31,8 @@ export const Dashboard = props => {
   }, []);
 
   return (
-    <div className="row">
+    <MotionDiv>
+      <div className="row">
       <div className="col-md-3 d-none d-md-flex">
         Side menu goes here
       </div>
@@ -39,8 +46,8 @@ export const Dashboard = props => {
                   <ProgressBar progressState={progressState} widthFromCenter={'60'} stroke={'3'} height={'120'} image={husky}
                                color={'#034D91'}/>
                 </div>
-                <p className={`primary-text bold-font font-size-2`}>Bruno</p>
-                <p className={`d-none d-md-block primary-text`}>German Shepherd</p>
+                <p className={`text--primary bold-font font-size-2`}>Bruno</p>
+                <p className={`d-none d-md-block text--primary`}>German Shepherd</p>
               </div>
             </div>
 
@@ -56,15 +63,15 @@ export const Dashboard = props => {
                       <img src={scale}  alt="Scale" />
                     </div>
                     <div className={`${classes.pillContentSection}`}>
-                      <span className={`light-text`}>Weight</span>
-                      <span className={`primary-text ${classes.contentText}`}>5.4kg</span>
+                      <span className={`text--light`}>Weight</span>
+                      <span className={`text--primary ${classes.contentText}`}>5.4kg</span>
                     </div>
                   </div>
                 </div>
                 <div className={`col-5`}>
                   <div className={`${classes.infoPill} ${classes.infoPill__dark}`}>
                     <div>
-                      <span className={`light-text`}>Plan</span>
+                      <span className={`text--light`}>Plan</span>
                       <span className={`${classes.contentText} white-text`}>Super</span>
                     </div>
                     <div className={`${classes.pillContentSection}`}>
@@ -78,15 +85,15 @@ export const Dashboard = props => {
                       <img src={bcs}  alt="Scale" />
                     </div>
                     <div className={`${classes.pillContentSection}`}>
-                      <span className={`light-text`}>Condition</span>
-                      <span className={`primary-text ${classes.contentText}`}>Ideal</span>
+                      <span className={`text--light`}>Condition</span>
+                      <span className={`text--primary ${classes.contentText}`}>Ideal</span>
                     </div>
                   </div>
                 </div>
                 <div className={`col-5`}>
                   <div className={`${classes.infoPill} ${classes.infoPill__dark}`}>
                     <div>
-                      <span className={`light-text`}>Exercise</span>
+                      <span className={`text--light`}>Exercise</span>
                       <span className={`${classes.contentText} white-text`}>25km</span>
                     </div>
                     <div className={`${classes.pillContentSection}`}>
@@ -101,7 +108,7 @@ export const Dashboard = props => {
               <div onClick={alertClickHandler}
                 className={`${classes.alert} d-flex ${fadeOut ? 'animate__animated animate__slideOutLeft' : ''}`}>
                 <img src={alertIcon} alt="Woman holding a dog" className={`align-self-end`}/>
-                <span className={`yellow-tint-text`}>
+                <span className={`text--yellow-tint`}>
                   Improve analysis of Bruno's weight and physical state by selecting a Body Condition Score
                 </span>
               </div>
@@ -110,10 +117,11 @@ export const Dashboard = props => {
           </div>
         </div>
 
-        <Plans />
+        {!activePlan && <Plans />}
+        {activePlan && <ActivePlan />}
         <LogFood />
       </div>
-    </div>
-
+      </div>
+    </MotionDiv>
   );
 };

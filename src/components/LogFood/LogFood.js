@@ -10,7 +10,7 @@ export const LogFood = props => {
   }
   return (
     <div className={`${classes.LogFoodWrapper}`}>
-      <h4 className={`primary-text mb-17`}>Food Log</h4>
+      <h4 className={`text--primary mb-17`}>Food Log</h4>
 
       <div className={`accordion ${classes.widgetHeader}`} id="accordionExample">
         <div className={`accordion-item`}>
