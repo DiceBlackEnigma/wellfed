@@ -7,8 +7,7 @@ export const Plans = props => {
     <div className={`${classes.PlanSection}`}>
       <h4 className={`primary-text ml-1`}>Plan</h4>
       <div className={`d-flex ${classes.PlanScrollableSection}`}>
-        <div className={`plan-1 ${classes.PlanCard}`}
-             style={{'background-color': 'red'}}>
+        <div className={`${classes.planOne} ${classes.PlanCard}`}>
           <div>
             <img src={planOneImage} alt="Image of pup"/>
           </div>
@@ -18,14 +17,24 @@ export const Plans = props => {
           </div>
         </div>
 
-        <div className={`plan-1 ${classes.PlanCard}`}
-             style={{'background-color': 'goldenrod'}}>
-          Plan 1
+        <div className={`${classes.planTwo} ${classes.PlanCard}`}>
+          <div>
+            Plan 2
+          </div>
+          <div className={`${classes.ButtonWrapper}`}>
+            <button className={`btn default-btn`}>Customise</button>
+            <button className={`btn primary-btn`}>Select</button>
+          </div>
         </div>
 
-        <div className={`plan-1 ${classes.PlanCard}`}
-             style={{'background-color': 'aqua'}}>
-          Plan 1
+        <div className={`${classes.planThree} ${classes.PlanCard}`}>
+          <div>
+            Plan 3
+          </div>
+          <div className={`${classes.ButtonWrapper}`}>
+            <button className={`btn default-btn`}>Customise</button>
+            <button className={`btn secondary-btn`}>Select</button>
+          </div>
         </div>
       </div>
     </div>

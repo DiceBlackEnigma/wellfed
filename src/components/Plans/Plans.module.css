@@ -17,8 +17,8 @@
 .PlanSection .PlanCard {
     display:flex;
     padding:1rem;
-    margin: 0 1rem;
-    min-width:325px;
+    margin-left:1rem;
+    min-width:340px;
     min-height:325px;
     border-radius:15px;
     flex-direction:column;
@@ -33,4 +33,16 @@
 
 .PlanSection .PlanCard .ButtonWrapper button {
     min-width:calc(50% - 0.5rem);
+}
+
+.planOne {
+    background:linear-gradient(to bottom, #034D91, #022749);
+}
+
+.planTwo {
+    background:linear-gradient(to bottom, #FFAE2B, #FFCE80);
+}
+
+.planThree {
+    background-color:#FFF;
 }

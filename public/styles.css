@@ -13,6 +13,18 @@ html, body {
     color:#034D91;
 }
 
+.light-text {
+    color:#6894BD;
+}
+
+.white-text {
+    color:#FFF;
+}
+
+.yellow-tint-text {
+    color:#FFEFD5;
+}
+
 .primary-btn {
     color:#FFCE80;
     font-weight:bold;
@@ -64,6 +76,17 @@ html, body {
     padding-left:4rem;
 }
 
+.p-1 {
+    padding:1rem;
+}
 .mb-17 {
     margin-bottom:17px;
+}
+
+.bold-font {
+    font-weight:bold;
+}
+
+.font-size-2 {
+    font-size:1.5rem;
 }

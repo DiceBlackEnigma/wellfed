@@ -2,8 +2,6 @@ import {useState} from 'react';
 
 import classes from './LogFood.module.css';
 
-import petBowl from './food-bowl.svg';
-
 export const LogFood = props => {
   let [toggleState, setToggleState] = useState(true);
 
@@ -21,7 +19,6 @@ export const LogFood = props => {
                     aria-expanded={`${toggleState ? 'false' : 'true'}`} aria-controls="collapseOne" onClick={toggleStateClickHandler}>
               Log Bruno's food for last week
             </button>
-            {/*<img className={classes.petBowl} src={petBowl} alt="Pet Bowl" />*/}
           </h2>
           <div id="collapseOne" className={`accordion-collapse ${toggleState ? 'collapse' : 'show'}`} aria-labelledby="headingOne"
                data-bs-parent="#accordionExample">
