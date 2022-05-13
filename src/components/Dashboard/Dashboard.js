@@ -13,7 +13,10 @@ import runningDog from './exercise.svg';
 import alertIcon from './alert-icon.svg'
 
 export const Dashboard = props => {
-  const [progressState, setProgressLoadState] = useState(false);
+  let [progressState, setProgressLoadState] = useState(false);
+  let [fadeOut, setFadeOut] = useState(false);
+
+  const alertClickHandler = event => setFadeOut(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -95,7 +98,8 @@ export const Dashboard = props => {
             </div>
 
             <div className={`col-12`}>
-              <div className={`${classes.alert} d-flex`}>
+              <div onClick={alertClickHandler}
+                className={`${classes.alert} d-flex ${fadeOut ? 'animate__animated animate__slideOutLeft' : ''}`}>
                 <img src={alertIcon} alt="Woman holding a dog" className={`align-self-end`}/>
                 <span className={`yellow-tint-text`}>
                   Improve analysis of Bruno's weight and physical state by selecting a Body Condition Score

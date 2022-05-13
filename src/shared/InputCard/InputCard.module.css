@@ -1,0 +1,16 @@
+.InputCardGroup {
+    width:75%;
+    padding:1rem;
+    margin:0 auto 1rem;
+    border-radius:15px;
+    background-color:#FFF;
+}
+
+.InputCardGroup .imgWrapper {
+    width:30%;
+    margin:0 1rem;
+}
+
+.InputCardGroup .InputCardContent {
+    padding-left:.5rem;
+}
