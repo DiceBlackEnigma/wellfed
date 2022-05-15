@@ -49,16 +49,17 @@ html, body {
 
 .primary-btn:hover {
     color:#FFCE80;
-    filter: brightness(85%);
 }
 
 .default-btn:hover {
     color:#034D91;
-    filter: brightness(85%);
 }
 
 .secondary-btn:hover {
     color:#034D91;
+}
+
+.btn:hover {
     filter: brightness(85%);
 }
 
@@ -108,4 +109,16 @@ html, body {
 
 .background--yellow-tint {
     background-color:#FFEFD5;
+}
+
+.mobile-width {
+    margin:0 auto;
+    max-width:400px;
+    min-height:100vh;
+}
+
+@media screen and (min-width: 400px) {
+    .mobile-width {
+        box-shadow:5px 5px 29px #034d91;
+    }
 }

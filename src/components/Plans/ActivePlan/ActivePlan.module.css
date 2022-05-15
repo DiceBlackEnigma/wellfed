@@ -6,4 +6,5 @@
 .ActivePlanWrapper .foodIntakeWidget {
     padding:1rem;
     border-radius:15px;
+    background: #FFEFDF url('./food_intake_img.svg') 95% center no-repeat;
 }

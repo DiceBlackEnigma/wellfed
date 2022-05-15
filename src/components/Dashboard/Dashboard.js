@@ -1,9 +1,12 @@
 import {useEffect, useState} from 'react';
+import {useSearchParams} from 'react-router-dom';
+
+import {MotionDiv} from '../../shared/MotionDiv/MotionDiv';
 
 import {ProgressBar} from '../ProgressBar/ProgressBar';
 import {Plans} from '../Plans/Plans';
 import {LogFood} from '../LogFood/LogFood';
-
+import {ActivePlan} from '../Plans/ActivePlan/ActivePlan';
 
 import classes from './Dashboard.module.css';
 import husky from './husky.svg';
@@ -12,9 +15,6 @@ import bowl from './bowl.svg';
 import bcs from './body-conditon.svg';
 import runningDog from './exercise.svg';
 import alertIcon from './alert-icon.svg'
-import {MotionDiv} from '../../shared/MotionDiv/MotionDiv';
-import {useSearchParams} from 'react-router-dom';
-import {ActivePlan} from '../Plans/ActivePlan/ActivePlan';
 
 export const Dashboard = props => {
   const [progressState, setProgressLoadState] = useState(false);
@@ -72,7 +72,7 @@ export const Dashboard = props => {
                   <div className={`${classes.infoPill} ${classes.infoPill__dark}`}>
                     <div>
                       <span className={`text--light`}>Plan</span>
-                      <span className={`${classes.contentText} white-text`}>Super</span>
+                      <span className={`${classes.contentText} text--white`}>Super</span>
                     </div>
                     <div className={`${classes.pillContentSection}`}>
                       <img src={bowl}  alt="Scale" />
@@ -94,7 +94,7 @@ export const Dashboard = props => {
                   <div className={`${classes.infoPill} ${classes.infoPill__dark}`}>
                     <div>
                       <span className={`text--light`}>Exercise</span>
-                      <span className={`${classes.contentText} white-text`}>25km</span>
+                      <span className={`${classes.contentText} text--white`}>25km</span>
                     </div>
                     <div className={`${classes.pillContentSection}`}>
                       <img src={runningDog}  alt="Scale" />

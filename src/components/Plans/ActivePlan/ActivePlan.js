@@ -1,7 +1,5 @@
 import classes from './ActivePlan.module.css';
 
-import foodIntakeImage from './food_intake_img.svg';
-
 export const ActivePlan = props => {
   return (
     <div className={`${classes.ActivePlanWrapper} d-flex`}>
@@ -13,7 +11,6 @@ export const ActivePlan = props => {
               <span className={`text--orange bold-font`}>1,450</span>
               <span className={`text--primary`}>kcal</span>
             </div>
-            <img src={foodIntakeImage} alt="Woman feeding a dog"/>
         </div>
       </div>
     </div>

@@ -1,20 +1,43 @@
 import {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+
+import validator from 'validator/es';
 
 import logo from './logo.svg';
 import classes from './Login.module.css';
 
 export const Login = props => {
   const [activeClass, setActiveClass] = useState(false);
+  const [formValid, setFormValid] = useState(false);
+  const [emailField, setEmailField] = useState('');
+  const [passwordField, setPasswordField] = useState('');
+
+  const navigatge = useNavigate();
 
   const navClickHandler = (event, activeState) => {
     event.preventDefault();
     setActiveClass(activeState);
   };
 
+  const loginClickHandler = event => {
+    event.preventDefault();
+    navigatge('/dashboard');
+  };
+
+  const onChangeEmailHandler = event => {
+    setEmailField(event.target.value);
+    setFormValid(validator.isEmail(event.target.value) && passwordField);
+  }
+
+  const onChangePasswordHandler = event => {
+    setPasswordField(event.target.value);
+    setFormValid(validator.isEmail(emailField) && event.target.value);
+  };
+
   return (
     <div className="row">
       <div className="col-12 col-md-4 offset-md-4 text-center">
-        <div className={`${classes.Login} d-flex flex-column align-items-center`}>
+        <div className={`${classes.Login} mobile-width d-flex flex-column align-items-center`}>
           <img src={logo} alt="" className={classes.Logo}/>
           <nav className={`${activeClass ? classes.active : ''} w-100 d-flex mb-5`}>
             <a href="#" onClick={e => navClickHandler(e, false)} className={`${!activeClass ? classes.active : ''}`}>Log
@@ -31,13 +54,13 @@ export const Login = props => {
             </button>
           </div>
 
-          <div>
-            <form>
-              <input type="email" name="email" id="email" className={'form-control'} placeholder="email"/>
-              <input type="password" name="password" id="password" className={'form-control'} placeholder="password"/>
-              <button className={'btn btn-primary w-100'}>Login</button>
+          <div className={`w-100 px-4`}>
+            <form onSubmit={loginClickHandler}>
+              <input onChange={onChangeEmailHandler} type="email" name="email" id="email" className={'form-control mb-2'} placeholder="email"/>
+              <input onChange={onChangePasswordHandler} type="password" name="password" id="password" className={'form-control mb-4'} placeholder="password"/>
+              <button className={'btn primary-btn w-100 mb-3'} disabled={!formValid}>Login</button>
             </form>
-            <a href="">Forgot Password?</a>
+            <a href="#">Forgot Password?</a>
           </div>
         </div>
       </div>
