@@ -36,6 +36,14 @@
     font-weight: bold;
 }
 
+.Login form.active {
+    display:block;
+}
+
+.Login form {
+    display:none;
+}
+
 .Login .socialMediaSignupWrapper button {
     width: 100%;
     min-height: 3rem;

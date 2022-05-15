@@ -55,12 +55,20 @@ export const Login = props => {
           </div>
 
           <div className={`w-100 px-4`}>
-            <form onSubmit={loginClickHandler}>
+            <form onSubmit={loginClickHandler} className={`${!activeClass ? classes.active : ''}`}>
               <input onChange={onChangeEmailHandler} type="email" name="email" id="email" className={'form-control mb-2'} placeholder="email"/>
               <input onChange={onChangePasswordHandler} type="password" name="password" id="password" className={'form-control mb-4'} placeholder="password"/>
               <button className={'btn primary-btn w-100 mb-3'} disabled={!formValid}>Login</button>
+              <a href="#">Forgot Password?</a>
             </form>
-            <a href="#">Forgot Password?</a>
+
+            <form  className={`${classes.loginForm} ${activeClass ? classes.active : ''}`}>
+              <input onChange={onChangeEmailHandler} type="text" name="name" id="name" className={'form-control mb-2'} placeholder="name"/>
+              <input onChange={onChangeEmailHandler} type="email" name="signup-email" id="signup-email" className={'form-control mb-2'} placeholder="email"/>
+              <input onChange={onChangePasswordHandler} type="password" name="signup-password" id="signup-password" className={'form-control mb-4'} placeholder="password"/>
+              <input onChange={onChangePasswordHandler} type="password" name="signup-password" id="signup-password" className={'form-control mb-4'} placeholder="confirm password"/>
+              <button className={'btn primary-btn w-100 mb-3'} disabled={!formValid}>Signup</button>
+            </form>
           </div>
         </div>
       </div>
