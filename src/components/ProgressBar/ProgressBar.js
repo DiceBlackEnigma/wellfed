@@ -10,19 +10,19 @@ export const ProgressBar = props => {
       height={props.height}
       width={props.height}
     >
-      <defs>
-        <clipPath id="myCircle">
-          <circle
-            fill="#FFF"
-            r="100"
-            cx="100"
-            cy="90"
-          />
-        </clipPath>
-      </defs>
-      <image width="100" height="100" href={props.image} clip-path="url(#myCircle)" />
+      {/*<defs>*/}
+      {/*  <clipPath id="myCircle">*/}
+      {/*    <circle*/}
+      {/*      fill="#FFF"*/}
+      {/*      r="100"*/}
+      {/*      cx="100"*/}
+      {/*      cy="90"*/}
+      {/*    />*/}
+      {/*  </clipPath>*/}
+      {/*</defs>*/}
+      {/*<image width="100" height="100" href={props.image} clip-path="url(#myCircle)" />*/}
       <circle
-        style={{'stroke-dasharray': `${circumference}px ${circumference}px`, 'stroke-dashoffset': props.progressState ? `${circumference * 0.7}px`: `${circumference}px`}}
+        style={{'stroke-dasharray': `${circumference}px ${circumference}px`, 'stroke-dashoffset': props.progressState ? `${circumference * 0.48}px`: `${circumference}px`}}
         className={`${classes['progress-ring__circle']} ${props.progressState ? classes.active : ''}`}
         stroke-width={props.stroke}
         stroke-linecap="round"

@@ -41,9 +41,9 @@ export const Dashboard = props => {
           <div className="row d-flex">
             <div className="col-12 col-md-4 order-md-2">
               <div className={`d-flex flex-column align-items-center`}>
-                <div style={{position: 'relative'}}>
+                <div style={{position: 'relative', background: `url(${husky}) no-repeat center center`, 'background-size': '50%'}}>
                   {/*<img src={husky} alt="dog profile img" />*/}
-                  <ProgressBar progressState={progressState} widthFromCenter={'60'} stroke={'3'} height={'120'} image={husky}
+                  <ProgressBar progressState={progressState} widthFromCenter={'60'} stroke={'6'} height={'120'} image={husky}
                                color={'#034D91'}/>
                 </div>
                 <p className={`text--primary bold-font font-size-2`}>Bruno</p>
