@@ -1,3 +1,7 @@
+.DashboardWrapper {
+    margin-bottom:4rem;
+}
+
 .infoPill {
     display:flex;
     padding: .5rem .75rem;

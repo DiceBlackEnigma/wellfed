@@ -1,0 +1,8 @@
+.CaloriesChart {
+    padding:.5rem;
+    border-radius:15px;
+    margin: 1rem auto 0;
+    background-color:#034D91;
+    width: calc(100% - 2rem);
+    box-shadow:3px 5px 10px #FFAE2B;
+}
