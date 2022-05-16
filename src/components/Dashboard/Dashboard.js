@@ -27,10 +27,14 @@ export const Dashboard = props => {
   const [numOfWeeks, setNumOfWeeks] = useState(0);
   const [totalCalories, setTotalCalories] = useState(0);
   const [averageCalories, setAverageCalories] = useState(0);
+  const [removeAlert, setRemoveAlert] = useState(false);
 
   const activePlan = !!searchParams.get('p');
 
-  const alertClickHandler = event => setFadeOut(true);
+  const alertClickHandler = event => {
+    setFadeOut(true);
+    setTimeout(() => setRemoveAlert(true), 500);
+  };
   useEffect(() => {
     setTimeout(() => {
       setProgressLoadState(true);
@@ -47,13 +51,13 @@ export const Dashboard = props => {
   };
 
   useEffect(() => {
-    const totalKcal = calories.reduce( (acc, [_, item]) => acc + item, 0);
+    const totalKcal = calories.reduce((acc, [_, item]) => acc + item, 0);
     setTotalCalories(totalKcal);
 
     console.log(totalKcal);
-    console.log(calories)
+    console.log(calories);
 
-    setAverageCalories(totalKcal /( calories.length - 1));
+    setAverageCalories(totalKcal / (calories.length - 1));
   }, [calories]);
 
 
@@ -137,15 +141,15 @@ export const Dashboard = props => {
                   </div>
                 </div>
 
-                <div className={`col-12`}>
+                {!removeAlert && <div className={`col-12`}>
                   <div onClick={alertClickHandler}
                        className={`${classes.alert} d-flex ${fadeOut ? 'animate__animated animate__slideOutLeft' : ''}`}>
                     <img src={alertIcon} alt="Woman holding a dog" className={`align-self-end`}/>
                     <span className={`text--yellow-tint`}>
                   Improve analysis of Bruno's weight and physical state by selecting a Body Condition Score
-                </span>
+                  </span>
                   </div>
-                </div>
+                </div>}
 
               </div>
             </div>
@@ -154,9 +158,9 @@ export const Dashboard = props => {
             {activePlan && <ActivePlan/>}
             <LogFood logWeeklyFood={logWeeklyFood}/>
             {!!numOfWeeks && <CaloriesChart calories={calories}
-                           weeks={numOfWeeks}
-                           avgCalories={averageCalories}
-                           totalCalories={totalCalories}/>}
+                                            weeks={numOfWeeks}
+                                            avgCalories={averageCalories}
+                                            totalCalories={totalCalories}/>}
           </div>
         </div>
       </div>
