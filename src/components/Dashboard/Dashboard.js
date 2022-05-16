@@ -24,6 +24,10 @@ export const Dashboard = props => {
   const [fadeOut, setFadeOut] = useState(false);
   const [calories, setCalories] = useState(CALORIES);
 
+  const [numOfWeeks, setNumOfWeeks] = useState(0);
+  const [totalCalories, setTotalCalories] = useState(0);
+  const [averageCalories, setAverageCalories] = useState(0);
+
   const activePlan = !!searchParams.get('p');
 
   const alertClickHandler = event => setFadeOut(true);
@@ -33,17 +37,25 @@ export const Dashboard = props => {
     }, 200);
   }, []);
 
+  const logWeeklyFood = weeklyCalories => {
+    setCalories(prevCalories => {
+      const [x] = prevCalories[prevCalories.length - 1];
+      const newWeek = [x + 1, weeklyCalories];
+      return [...prevCalories, newWeek];
+    });
+    setNumOfWeeks(prevWeekNo => ++prevWeekNo);
+  };
+
   useEffect(() => {
-    // setInterval(() => {
-    //   setCalories(prevCalories => {
-    //     console.log('got here')
-    //     const [x, y] = prevCalories[prevCalories.length - 1];
-    //     const newItem = [x+1, y+5];
-    //     console.log(newItem);
-    //     return [...prevCalories, newItem];
-    //   })
-    // }, 1000);
-  }, []);
+    const totalKcal = calories.reduce( (acc, [_, item]) => acc + item, 0);
+    setTotalCalories(totalKcal);
+
+    console.log(totalKcal);
+    console.log(calories)
+
+    setAverageCalories(totalKcal /( calories.length - 1));
+  }, [calories]);
+
 
   return (
     <MotionDiv>
@@ -140,8 +152,11 @@ export const Dashboard = props => {
 
             {!activePlan && <Plans/>}
             {activePlan && <ActivePlan/>}
-            <LogFood/>
-            <CaloriesChart calories={calories}/>
+            <LogFood logWeeklyFood={logWeeklyFood}/>
+            {!!numOfWeeks && <CaloriesChart calories={calories}
+                           weeks={numOfWeeks}
+                           avgCalories={averageCalories}
+                           totalCalories={totalCalories}/>}
           </div>
         </div>
       </div>

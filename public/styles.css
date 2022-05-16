@@ -13,6 +13,10 @@ html, body {
     color:#E35E25;
 }
 
+.text--light-orange {
+    color:#FFAE2B;
+}
+
 .text--primary {
     color:#034D91;
 }
@@ -71,13 +75,27 @@ html, body {
     margin-left:1rem;
 }
 
-.alert-widget-danger {
+.alert-widget-danger.collapsed {
     color:#FFEFD5;
     font-weight:bold;
     position:relative;
     border-radius:10px !important;
     box-shadow:3px 3px 6px #FFAE2B;
     background-color:#E35E25 !important;
+}
+
+.accordion-button:not(.collapsed) {
+    color:#E35E25;
+}
+
+.alert-widget-danger {
+    background-color:#FFEFD5 !important;
+    transition: all .5s;
+}
+
+.accordion .accordion-body {
+    background-color:#FFEFD5 !important;
+    transition: all .5s;
 }
 
 .accordion-header {
