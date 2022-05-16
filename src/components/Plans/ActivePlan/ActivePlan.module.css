@@ -8,3 +8,26 @@
     border-radius:15px;
     background: #FFEFDF url('./food_intake_img.svg') 95% center no-repeat;
 }
+
+.calorieDailyPlan.active {
+    /*top:0;*/
+    transform: translateY(0);
+}
+
+.calorieDailyPlan {
+    top:0;
+    position:absolute;
+    transform:translateY(-100px);
+    transition: transform 0.5s;
+}
+
+.cupDailyPlan {
+    top:0;
+    position:absolute;
+    transform:translateY(100px);
+    transition: transform 0.5s;
+}
+
+.cupDailyPlan.active {
+    transform: translateY(0);
+}
