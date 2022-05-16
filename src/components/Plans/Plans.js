@@ -1,6 +1,8 @@
 import classes from './Plans.module.css';
 
 import planOneImage from './plan-1-img.png';
+import planTwoImage from './plan-2-img.svg';
+
 import {Link} from 'react-router-dom';
 
 export const Plans = props => {
@@ -42,8 +44,46 @@ export const Plans = props => {
         </div>
 
         <div className={`${classes.planTwo} ${classes.PlanCard}`}>
-          <div>
-            Plan 2
+          <div className={`row`}>
+            <div className={`col-12`}>
+              <div className={`d-flex justify-content-between align-items-start`} style={{'margin-bottom': '.5rem'}}>
+                <div>
+                <p className={`text--primary bold-font`} style={{'margom-bottom': 0, 'font-size': '1.25rem'}}>Get Back In Shape Plan</p>
+                  <p style={{'margin-bottom': 0}} className={`text--primary`}>So you let your dog go. No worries, we can help your dog get
+                    back its confidence and summer bud!
+                  </p>
+                </div>
+                  <img src={planTwoImage} alt={'obese pup'} />
+              </div>
+
+            </div>
+          </div>
+          <div className={`row`}>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Duration</span>
+              <span className={`text--primary`}>6 months</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Calories</span>
+              <span className={`text--primary`}>1,250kcal</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Pet Age</span>
+              <span className={`text--primary`}>Adult</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Condition</span>
+              <span className={`text--primary`}>Obese</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Target</span>
+              <span className={`text--primary`}>Ideal</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Exercise</span>
+              <span className={`text--primary`}>20km</span>
+            </div>
+
           </div>
           <div className={`${classes.ButtonWrapper}`}>
             <Link to="/plans/2" className={`btn default-btn`}>Customise</Link>
@@ -52,12 +92,51 @@ export const Plans = props => {
         </div>
 
         <div className={`${classes.planThree} ${classes.PlanCard}`}>
-          <div>
-            Plan 3
+          <div className={`row`}>
+            <div className={`col-12`}>
+              <div className={`d-flex justify-content-between align-items-start`} style={{'margin-bottom': '.5rem'}}>
+                <div className={`text-center`}>
+                  <p className={`text--primary bold-font`} style={{'margom-bottom': 0, 'font-size': '1.25rem'}}>
+                    Active Runner Plan
+                  </p>
+                  <p style={{'margin-bottom': 0}} className={`text--primary`}>
+                    For the dogs with way too much energy, make sure they eat enough for the calories they burn
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div className={`row`}>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Duration</span>
+              <span className={`text--primary`}>4 weeks</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Calories</span>
+              <span className={`text--primary`}>1,500kcal</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Pet Age</span>
+              <span className={`text--primary`}>Adult</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Condition</span>
+              <span className={`text--primary`}>Obese</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Target</span>
+              <span className={`text--primary`}>Ideal</span>
+            </div>
+            <div className={`col-4 d-flex flex-column ${classes.infoSection}`}>
+              <span className={`text--primary`}>Exercise</span>
+              <span className={`text--primary`}>50km</span>
+            </div>
+
           </div>
           <div className={`${classes.ButtonWrapper}`}>
-            <Link to="/plans/3" className={`btn default-btn`}>Customise</Link>
-            <button className={`btn secondary-btn`}>Select</button>
+            <Link to="/plans/2" className={`btn secondary-btn`}>Customise</Link>
+            <button className={`btn primary-btn`}>Select</button>
           </div>
         </div>
       </div>
