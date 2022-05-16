@@ -65,13 +65,13 @@ export const Dashboard = props => {
     <MotionDiv>
       <div className={`${classes.DashboardWrapper}`}>
         <div className="row">
-          <div className="col-md-3 d-none d-md-flex">
+          <div className="col-md-3 d-none">
             Side menu goes here
           </div>
-          <div className="col-12 col-md-9">
+          <div className="col-12">
             <div className="petInfoSection">
               <div className="row d-flex">
-                <div className="col-12 col-md-4 order-md-2">
+                <div className="col-12">
                   <div className={`d-flex flex-column align-items-center`}>
                     <div style={{
                       position: 'relative',
@@ -84,15 +84,15 @@ export const Dashboard = props => {
                                    color={'#034D91'}/>
                     </div>
                     <p className={`text--primary bold-font font-size-2`}>Bruno</p>
-                    <p className={`d-none d-md-block text--primary`}>German Shepherd</p>
+                    <p className={`d-none text--primary`}>German Shepherd</p>
                   </div>
                 </div>
 
-                <div className="col-md-4 d-none d-md-block">
+                <div className="col-md-4 d-none">
                   Calories goes here
                 </div>
 
-                <div className="col-12 col-md-4">
+                <div className="col-12">
                   <div className={`row`}>
                     <div className={`col-5 offset-1`}>
                       <div className={`${classes.infoPill} ${classes.infoPill__light}`}>

@@ -37,7 +37,7 @@ export const Login = props => {
   return (
     <div className="row">
       <div className="col-12 col-md-4 offset-md-4 text-center">
-        <div className={`${classes.Login} mobile-width d-flex flex-column align-items-center`}>
+        <div className={`${classes.Login}  d-flex flex-column align-items-center`}>
           <img src={logo} alt="" className={classes.Logo}/>
           <nav className={`${activeClass ? classes.active : ''} w-100 d-flex mb-5`}>
             <a href="#" onClick={e => navClickHandler(e, false)} className={`${!activeClass ? classes.active : ''}`}>Log

@@ -14,7 +14,7 @@ export const ActivePlan = props => {
       <div className={`${classes.foodIntakeWidget} background--yellow-tint w-100`}>
         <p className={`text--primary bold-font`}>Today's planned food intake</p>
         <span onClick={toggleActiveDailyClassClickHandler} className={`text--primary`}>
-          {activeDailyClass ? 'Calories' : 'Cups'}
+          {activeDailyClass ? 'Calories' : 'Cups & Treats'}
         </span>
         <div>
           <div style={{overflow: 'hidden', position: 'relative', height: '3.5rem'}}>
